@@ -4,11 +4,20 @@
   "description": "React Template by Rokas Anisas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "keywords": [
     "react"
   ],
   "author": "Rokas Anisas",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "@types/webpack": "^4.41.21",
+    "path": "^0.12.7",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
 }
