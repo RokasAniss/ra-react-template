@@ -1,4 +1,4 @@
 ## React Template by [@RokasAniss](https://github.com/RokasAniss)
 
 ### Structure `(src/)`
-- `components` UI components only, no direct connection to store or api calls in here
+- `src/components` UI components only, no direct connection to store or api calls in here
