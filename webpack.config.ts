@@ -1,12 +1,14 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: webpack.Configuration = {
   mode: 'production',
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'foo.bundle.js',
+    filename: 'app.bundle.js',
   },
   module: {
     rules: [
@@ -15,8 +17,20 @@ const config: webpack.Configuration = {
         exclude: [/node_modules/],
         use: ['ts-loader', 'eslint-loader'],
       },
+      {
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.min.[hash].css',
+    }),
+  ],
 };
 
 export default config;
