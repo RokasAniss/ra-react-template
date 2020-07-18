@@ -1,1 +1,1 @@
-## React Template by @RokasAniss
+## React Template by (@RokasAniss)[https://github.com/RokasAniss]
