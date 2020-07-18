@@ -1,3 +1,3 @@
-// import './theme/theme.scss';
+import './theme/theme.scss';
 
 console.log('Hello James!');
