@@ -5,7 +5,7 @@ const App: FunctionComponent = () => {
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>App</h1>
+      <span className={`${className}__title`}>App</span>
     </div>
   );
 };

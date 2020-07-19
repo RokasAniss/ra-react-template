@@ -1,0 +1,10 @@
+$font-heading: 'Times New Roman', serif;
+$font-body: 'Arial', sans-serif;
+
+$font-size-map: (
+  's': 1rem,
+);
+
+@function font-size($_key) {
+  @return map-get($font-size-map, $_key);
+}

@@ -1,0 +1,11 @@
+$font-family-heading: 'Times New Roman', serif;
+$font-family-body: 'Arial', sans-serif;
+
+$font-family-map: (
+  'heading': $font-family-heading,
+  'body': $font-family-body,
+);
+
+@function font-family($_key) {
+  @return map-get($font-family-map, $_key);
+}

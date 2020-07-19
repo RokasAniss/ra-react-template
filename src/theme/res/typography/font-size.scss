@@ -1,0 +1,7 @@
+$font-size-map: (
+  's': 1rem,
+);
+
+@function font-size($_key) {
+  @return map-get($font-size-map, $_key);
+}

@@ -7,7 +7,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
 const config: webpack.Configuration = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.tsx',
   stats: 'minimal',
   devtool: 'source-map',
@@ -35,7 +35,12 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
