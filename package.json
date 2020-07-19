@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "lint:fix": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\""
+    "lint:fix": "stylelint --fix **/*.scss && prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\""
   },
   "keywords": [
     "react"
