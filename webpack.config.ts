@@ -19,10 +19,15 @@ const config: webpack.Configuration = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.ts', '.tsx', '.scss'],
+    extensions: ['.js', '.ts', '.tsx', '.scss'],
   },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: [/node_modules/],
+        use: ['babel-loader', 'eslint-loader'],
+      },
       {
         test: /\.(ts|tsx)$/,
         exclude: [/node_modules/],
