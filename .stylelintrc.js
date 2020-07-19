@@ -7,7 +7,7 @@ module.exports = {
   ],
   rules: {
     'color-no-invalid-hex': true,
-    indentation: 4,
+    indentation: 2,
     'color-named': 'never',
     'order/order': ['dollar-variables', 'declarations', 'rules'],
     'order/properties-alphabetical-order': true,
