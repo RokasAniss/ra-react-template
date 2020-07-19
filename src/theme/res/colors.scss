@@ -1,0 +1,11 @@
+$dark: #0a0a0a;
+$light: #fff;
+
+$theme-colors: (
+  'dark': $dark,
+  'light': $light,
+);
+
+@function color($_key) {
+  @return map-get($theme-colors, $_key);
+}
