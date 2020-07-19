@@ -11,7 +11,9 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({
 
   return (
     <div className={className}>
-      <Logo />
+      <div className={`${className}__logo`}>
+        <Logo />
+      </div>
       <div className={`${className}__body`}>{children}</div>
     </div>
   );
