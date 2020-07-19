@@ -11,7 +11,7 @@ const config: webpack.Configuration = {
   stats: 'minimal',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js',
+    filename: 'app.bundle.[hash].js',
   },
   module: {
     rules: [
