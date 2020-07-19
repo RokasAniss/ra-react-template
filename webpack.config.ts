@@ -3,6 +3,7 @@ import * as webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config: webpack.Configuration = {
   mode: 'production',
@@ -32,6 +33,7 @@ const config: webpack.Configuration = {
       filename: 'styles.min.[hash].css',
     }),
     new StylelintPlugin(),
+    new CleanWebpackPlugin(),
   ],
 };
 
