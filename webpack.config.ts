@@ -8,12 +8,18 @@ import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
 const config: webpack.Configuration = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   stats: 'minimal',
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.[hash].js',
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+    extensions: ['.js', '.ts', '.tsx', '.scss'],
   },
   module: {
     rules: [

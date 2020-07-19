@@ -17,6 +17,8 @@
     "@types/browser-sync-webpack-plugin": "^2.2.0",
     "@types/mini-css-extract-plugin": "^0.9.1",
     "@types/node": "^14.0.23",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "@types/stylelint-webpack-plugin": "^2.1.0",
     "@types/webpack": "^4.41.21",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
@@ -27,6 +29,7 @@
     "css-loader": "^3.6.0",
     "eslint": "^7.4.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-react": "^7.20.3",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
@@ -46,6 +49,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "browserslist": "^4.13.0"
+    "browserslist": "^4.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
