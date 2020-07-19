@@ -9,6 +9,7 @@ const config: webpack.Configuration = {
   mode: 'production',
   entry: './src/index.ts',
   stats: 'minimal',
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.[hash].js',
