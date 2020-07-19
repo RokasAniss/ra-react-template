@@ -19,7 +19,7 @@ const config: webpack.Configuration = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.js', '.ts', '.tsx', '.scss'],
+    extensions: ['.ts', '.tsx', '.scss'],
   },
   module: {
     rules: [
