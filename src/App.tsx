@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react';
 
+import MainLayout from '@/layouts/MainLayout';
+
 const App: FunctionComponent = () => {
-  const className = 'app';
 
   return (
-    <div className={className}>
-      <span className={`${className}__title`}>App</span>
-    </div>
+    <MainLayout>
+      <span>App</span>
+    </MainLayout>
   );
 };
 

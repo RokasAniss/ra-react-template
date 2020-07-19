@@ -40,6 +40,12 @@ const config: webpack.Configuration = {
           'css-loader',
           'postcss-loader',
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, 'src/theme/res/_index.scss'),
+            },
+          },
         ],
       },
     ],
