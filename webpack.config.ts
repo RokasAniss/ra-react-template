@@ -8,7 +8,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 const config: webpack.Configuration = {
   mode: 'production',
   entry: './src/index.ts',
-  stats: "minimal",
+  stats: 'minimal',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js',
