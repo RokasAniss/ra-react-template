@@ -6,14 +6,25 @@ import StylelintPlugin from 'stylelint-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
+const IOconfig = {
+  entry: path.resolve(__dirname, './src/index.tsx'),
+  output: {
+    dir: path.resolve(__dirname, 'dist'),
+    js: 'app.bundle.[hash].js',
+    css: 'styles.min.[hash].css',
+  },
+  htmlTemplate: path.resolve(__dirname, 'src/index.html'),
+  themeRes: path.resolve(__dirname, 'src/theme/res/_index.scss')
+}
+
 const config: webpack.Configuration = {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: IOconfig.entry,
   stats: 'minimal',
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.[hash].js',
+    path: IOconfig.output.dir,
+    filename: IOconfig.output.js,
   },
   resolve: {
     alias: {
@@ -43,7 +54,7 @@ const config: webpack.Configuration = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.resolve(__dirname, 'src/theme/res/_index.scss'),
+              resources: IOconfig.themeRes,
             },
           },
         ],
@@ -52,10 +63,10 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html'),
+      template: IOconfig.htmlTemplate,
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.min.[hash].css',
+      filename: IOconfig.output.css,
     }),
     new StylelintPlugin(),
     new CleanWebpackPlugin(),
