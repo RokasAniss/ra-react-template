@@ -14,8 +14,8 @@ const IOconfig = {
     css: 'styles.min.[hash].css',
   },
   htmlTemplate: path.resolve(__dirname, 'src/index.html'),
-  themeRes: path.resolve(__dirname, 'src/theme/res/_index.scss')
-}
+  themeRes: path.resolve(__dirname, 'src/theme/res/_index.scss'),
+};
 
 const config: webpack.Configuration = {
   mode: 'development',
