@@ -7,7 +7,10 @@
     "start": "webpack --watch",
     "build": "webpack",
     "lint": "stylelint  **/*.scss && eslint \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
-    "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\""
+    "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve"
   },
   "keywords": [
     "react"
@@ -31,6 +34,7 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
+    "docz": "^2.3.1",
     "eslint": "^7.4.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-react": "^7.20.3",
