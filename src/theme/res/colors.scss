@@ -1,9 +1,9 @@
-$dark: #0a0a0a;
-$light: #fff;
+$color-dark: #0a0a0a;
+$color-light: #fff;
 
 $theme-colors: (
-  'dark': $dark,
-  'light': $light,
+  'dark': $color-dark,
+  'light': $color-light,
 );
 
 @function color($_key) {
