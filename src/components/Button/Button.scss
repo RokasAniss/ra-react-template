@@ -21,4 +21,13 @@
       color: color('light');
     }
   }
+
+  &:disabled {
+    background-color: darken(color('light'), 50%);
+    cursor: not-allowed;
+
+    #{$_parent}__title {
+      color: lighten(color('dark'), 30%);
+    }
+  }
 }
