@@ -13,7 +13,7 @@ const Button: FunctionComponent<ButtonProps> = ({ title }: ButtonProps) => {
 };
 
 interface ButtonProps {
-  title: string;
+  title?: string;
 }
 
 export default Button;

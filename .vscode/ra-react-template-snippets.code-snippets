@@ -49,15 +49,16 @@
 			"import { Props, Playground } from 'docz';",
 			"import ${TM_FILENAME_BASE} from './${TM_FILENAME_BASE}.tsx';",
 			"",
-			"# ${TM_FILENAME_BASE} props",
-			"",
-			"<Props of={${TM_FILENAME_BASE}} />",
-			"",
 			"# ${TM_FILENAME_BASE}",
 			"",
 			"<Playground>",
 			"	<${TM_FILENAME_BASE} />",
-			"</Playground>"
+			"</Playground>",
+			"",
+			"## ${TM_FILENAME_BASE} props",
+			"",
+			"<Props of={${TM_FILENAME_BASE}} />",
+			"",
 		]
 	}
 }

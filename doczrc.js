@@ -1,4 +1,4 @@
 export default {
+  title: 'RA Template Design System',
   typescript: true,
-  files: 'src/**/*.{md,markdown,mdx}',
 };
