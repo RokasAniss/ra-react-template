@@ -6,9 +6,9 @@ const Button: FunctionComponent<ButtonProps> = ({ title }: ButtonProps) => {
   const className = "button";
 
   return (
-    <div className={className}>
-      <h1 className={`${className}__title`}>{title}</h1>
-    </div>
+    <button className={className}>
+      <span className={`${className}__title`}>{title}</span>
+    </button>
   );
 };
 

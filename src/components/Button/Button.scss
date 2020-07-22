@@ -1,3 +1,24 @@
 .button {
+  $_parent: &;
+
+  background-color: color('light');
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
   display: flex;
+  padding: spacing('s');
+  transition: all 0.3s ease;
+
+  &__title {
+    color: color('dark');
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    background-color: darken(color('light'), 70%);
+
+    #{$_parent}__title {
+      color: color('light');
+    }
+  }
 }
