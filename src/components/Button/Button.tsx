@@ -2,8 +2,11 @@ import React, { FunctionComponent } from 'react';
 
 import './Button.scss';
 
-const Button: FunctionComponent<ButtonProps> = ({ title, disabled }: ButtonProps) => {
-  const className = "button";
+const Button: FunctionComponent<ButtonProps> = ({
+  title,
+  disabled,
+}: ButtonProps) => {
+  const className = 'button';
 
   return (
     <button className={className} disabled={disabled}>
@@ -12,7 +15,7 @@ const Button: FunctionComponent<ButtonProps> = ({ title, disabled }: ButtonProps
   );
 };
 
-interface ButtonProps {
+export interface ButtonProps {
   title?: string;
   disabled?: boolean;
 }

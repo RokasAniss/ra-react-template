@@ -1,7 +1,7 @@
 {
   "Create react component": {
     "scope": "typescript,typescriptreact",
-    "prefix": "rtcomp",
+    "prefix": "racomp",
     "body": [
       "import React, { FunctionComponent, ReactNode } from 'react';",
       "",
@@ -29,7 +29,7 @@
   },
   "Initialise scss file": {
     "scope": "scss",
-    "prefix": "scssinit",
+    "prefix": "rascss",
     "body": [
       ".${TM_FILENAME_BASE/([A-Z][a-z]*)([A-Z][a-z]*)?([A-Z][a-z]*)?([A-Z][a-z]*)?/${1:/downcase}${2:+-}${2:/downcase}${3:+-}${3:/downcase}${4:+-}${4:/downcase}/} {",
       "	display: flex;",
@@ -40,7 +40,7 @@
 	},
 	"Component mdx file init": {
 		"scope": "markdown",
-		"prefix": "mdxcomp",
+		"prefix": "radoc",
 		"body": [
 			"---",
 			"name: ${TM_FILENAME_BASE}",
@@ -59,6 +59,29 @@
 			"",
 			"<Props of={${TM_FILENAME_BASE}} />",
 			"",
+		]
+	},
+	"Component unit test file init": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "ratest",
+		"body": [
+			"import React from 'react';",
+      "import { shallow } from 'enzyme';",
+      "",
+      "import $1, { $1Props } from './$1';",
+      "",
+      "describe('$1', () => {",
+      "	const defaultProps: $1Props = {}",
+      "",
+      "	const createWrapper = (props: Partial<$1Props> = {}) =>",
+      "		shallow(<$1 {...defaultProps} {...props} />);",
+      "",
+      "	it('Should render title', () => {",
+      "		const wrapper = createWrapper();",
+      "		expect(wrapper.find($1)).toBeTruthy();",
+      "	});",
+      "});",
+      "",
 		]
 	}
 }
