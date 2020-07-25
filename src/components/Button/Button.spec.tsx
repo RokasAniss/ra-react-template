@@ -15,5 +15,4 @@ describe('Button', () => {
     const wrapper = createWrapper();
     expect(wrapper.text()).toBe('Buttonas');
   });
-
 });
