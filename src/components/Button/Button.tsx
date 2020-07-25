@@ -12,7 +12,7 @@ const Button: FunctionComponent<ButtonProps> = ({ title, disabled }: ButtonProps
   );
 };
 
-interface ButtonProps {
+export interface ButtonProps {
   title?: string;
   disabled?: boolean;
 }
