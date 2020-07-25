@@ -46,6 +46,7 @@
     "eslint": "^7.4.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-react": "^7.20.3",
+    "file-loader": "^6.0.0",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sass-resources": "^2.0.0",
     "html-webpack-plugin": "^4.3.0",

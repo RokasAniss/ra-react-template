@@ -1,20 +1,16 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent,} from 'react';
 
+import image from '@/assets/image.jpg';
 import './Background.scss';
 
-const Background: FunctionComponent<BackgroundProps> = ({ children }: BackgroundProps) => {
+const Background: FunctionComponent = () => {
   const className = "background";
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>Background</h1>
-      <div className={`${className}__body`}>{children}</div>
+      <img className={`${className}__image`} src={image} />
     </div>
   );
 };
-
-interface BackgroundProps {
-  children?: ReactNode;
-}
 
 export default Background;
