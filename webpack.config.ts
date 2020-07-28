@@ -18,7 +18,6 @@ const IOconfig = {
 };
 
 const config: webpack.Configuration = {
-  mode: 'development',
   entry: IOconfig.entry,
   stats: 'minimal',
   devtool: 'source-map',

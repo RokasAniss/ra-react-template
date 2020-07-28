@@ -4,8 +4,8 @@
   "description": "React Template by Rokas Anisas",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch",
-    "build": "webpack",
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production",
     "lint": "stylelint  **/*.scss && eslint \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "test": "jest",
