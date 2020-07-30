@@ -12,6 +12,7 @@ const IOconfig = {
     dir: path.resolve(__dirname, 'dist'),
     js: 'app.bundle.[hash].js',
     css: 'styles.min.[hash].css',
+    assets: 'assets/',
   },
   htmlTemplate: path.resolve(__dirname, 'src/index.html'),
   themeRes: path.resolve(__dirname, 'src/theme/res/_index.scss'),
@@ -19,7 +20,7 @@ const IOconfig = {
 
 const config: webpack.Configuration = {
   entry: IOconfig.entry,
-  stats: 'minimal',
+  stats: 'normal',
   devtool: 'source-map',
   output: {
     path: IOconfig.output.dir,
@@ -54,6 +55,18 @@ const config: webpack.Configuration = {
             loader: 'sass-resources-loader',
             options: {
               resources: IOconfig.themeRes,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|png|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: IOconfig.output.assets,
+              name: '[name].[hash].[ext]',
             },
           },
         ],
