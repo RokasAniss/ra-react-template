@@ -1,10 +1,10 @@
-import React, { FunctionComponent,} from 'react';
+import React, { FunctionComponent } from 'react';
 
 import image from '@/assets/image.jpg';
 import './Background.scss';
 
 const Background: FunctionComponent = () => {
-  const className = "background";
+  const className = 'background';
 
   return (
     <div className={className}>

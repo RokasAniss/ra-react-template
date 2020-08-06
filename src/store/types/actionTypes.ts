@@ -7,5 +7,4 @@ export enum ActionTypes {
   setTitle = 'SetTitle',
 }
 
-export type Actions =
-  | SetTitle;
+export type Actions = SetTitle;

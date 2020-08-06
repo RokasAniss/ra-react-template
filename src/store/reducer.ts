@@ -14,5 +14,5 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
       return state;
     }
   }
-}
+};
 export default reducer;
