@@ -4,7 +4,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
 const IOconfig = {
   entry: path.resolve(__dirname, './src/index.tsx'),
@@ -20,7 +19,7 @@ const IOconfig = {
 
 const config: webpack.Configuration = {
   entry: IOconfig.entry,
-  stats: 'normal',
+  stats: 'minimal',
   devtool: 'source-map',
   output: {
     path: IOconfig.output.dir,
@@ -82,12 +81,6 @@ const config: webpack.Configuration = {
     }),
     new StylelintPlugin(),
     new CleanWebpackPlugin(),
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      server: { baseDir: ['dist'] },
-      notify: false,
-    }),
   ],
 };
 
