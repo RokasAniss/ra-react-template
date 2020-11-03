@@ -19,9 +19,9 @@
   "author": "Rokas Anisas",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-typescript": "^7.10.4",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
     "@types/browser-sync-webpack-plugin": "^2.2.0",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.15",
