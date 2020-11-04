@@ -1,12 +1,19 @@
 import React, { FunctionComponent } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import MainLayout from '@/layouts/MainLayout';
 
 const App: FunctionComponent = () => {
   return (
-    <MainLayout>
-      <span>App</span>
-    </MainLayout>
+    <Router>
+      <MainLayout>
+        <Switch>
+          <Route path="/">
+            <span>App</span>
+          </Route>
+        </Switch>
+      </MainLayout>
+    </Router>
   );
 };
 
