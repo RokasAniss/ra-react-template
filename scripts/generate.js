@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const component = require('./templates/component');
+const container = require('./templates/container');
 
 // Configs
 const config = {
@@ -58,24 +59,6 @@ const PromptType = async () => {
   });
 };
 
-// const GeneratePrompt = async () => {
-//   await prompts({
-//     type: 'text',
-//     name: 'name',
-//     message: 'Enter component name:',
-//     // validate: value => (value < 18 ? `Nightclub is 18+ only` : true),
-//   }).then(result => {
-//     checkIfComponentExists(result.name).then(exists => {
-//       if (exists) {
-//         console.log(config.consoleColor.error, 'file exists');
-//         GeneratePrompt();
-//       } else {
-//         console.log('Yay!');
-//       }
-//     });
-//   });
-// };
-
 const PromptName = async () => {
   await prompts({
     type: 'text',
@@ -91,6 +74,9 @@ const PromptName = async () => {
         if (TYPE === componentType.component) {
           generateComponent(value.name);
         }
+        if (TYPE === componentType.container) {
+          generateContainer(value.name);
+        }
       }
     });
   });
@@ -101,10 +87,11 @@ const checkIfComponentExists = async (name, subdir) => {
 };
 
 const generateComponent = name => {
-  const dirPath = `${config.outDir}/${TYPE}/${name}`;
+  const dirPath = `${config.outDir}/${componentType.component}/${name}`;
   const filePath = `${dirPath}/${name}`;
 
   fs.mkdirSync(dirPath);
+
   fs.writeFileSync(`${filePath}.tsx`, component.tsx(name));
   console.log(config.consoleColor.success, `+ ${name}.tsx`);
 
@@ -115,6 +102,19 @@ const generateComponent = name => {
   console.log(config.consoleColor.success, `+ ${name}.mdx`);
 
   fs.writeFileSync(`${dirPath}/index.ts`, component.index(name));
+  console.log(config.consoleColor.success, `+ index.ts`);
+};
+
+const generateContainer = name => {
+  const dirPath = `${config.outDir}/${componentType.container}/${name}`;
+  const filePath = `${dirPath}/${name}`;
+
+  fs.mkdirSync(dirPath, { recursive: true });
+
+  fs.writeFileSync(`${filePath}.tsx`, container.tsx(name));
+  console.log(config.consoleColor.success, `+ ${name}.tsx`);
+
+  fs.writeFileSync(`${dirPath}/index.ts`, container.index(name));
   console.log(config.consoleColor.success, `+ index.ts`);
 };
 
