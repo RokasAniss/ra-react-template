@@ -1,6 +1,6 @@
 const changeCase = require('change-case');
 
-const component = name => {
+const tsx = name => {
   const kebabName = changeCase.paramCase(name);
   return `import React, { FC } from 'react';
 
@@ -63,7 +63,7 @@ const index = name =>
 `;
 
 module.exports = {
-  component: component,
+  tsx: tsx,
   scss: scss,
   mdx: mdx,
   index: index,

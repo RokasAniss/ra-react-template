@@ -105,7 +105,7 @@ const generateComponent = name => {
   const filePath = `${dirPath}/${name}`;
 
   fs.mkdirSync(dirPath);
-  fs.writeFileSync(`${filePath}.tsx`, component.component(name));
+  fs.writeFileSync(`${filePath}.tsx`, component.tsx(name));
   console.log(config.consoleColor.success, `+ ${name}.tsx`);
 };
 
