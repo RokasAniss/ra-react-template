@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
+const mode = process.argv[process.argv.indexOf('--mode') + 1];
 const IOconfig = {
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
@@ -19,7 +20,7 @@ const IOconfig = {
 
 const config: webpack.Configuration = {
   entry: IOconfig.entry,
-  stats: 'normal',
+  stats: mode === 'production' ? 'normal' : 'minimal',
   devtool: 'source-map',
   output: {
     path: IOconfig.output.dir,
