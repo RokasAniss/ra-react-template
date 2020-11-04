@@ -9,7 +9,10 @@ const App: FunctionComponent = () => {
       <MainLayout>
         <Switch>
           <Route path="/">
-            <span>App</span>
+            <span>Home</span>
+          </Route>
+          <Route path="/about">
+            <span>About</span>
           </Route>
         </Switch>
       </MainLayout>
