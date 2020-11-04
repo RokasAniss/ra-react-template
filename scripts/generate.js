@@ -111,10 +111,10 @@ const generateContainer = name => {
 
   fs.mkdirSync(dirPath, { recursive: true });
 
-  fs.writeFileSync(`${filePath}.tsx`, container.tsx(name));
-  console.log(config.consoleColor.success, `+ ${name}.tsx`);
+  fs.writeFileSync(`${filePath}.container.tsx`, container.tsx(name));
+  console.log(config.consoleColor.success, `+ ${name}.container.tsx`);
 
-  fs.writeFileSync(`${dirPath}/index.ts`, container.index(name));
+  fs.writeFileSync(`${dirPath}/index.ts`, container.index(`${name}.container`));
   console.log(config.consoleColor.success, `+ index.ts`);
 };
 
