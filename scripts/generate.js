@@ -5,6 +5,7 @@ const path = require('path');
 
 const component = require('./templates/component');
 const container = require('./templates/container');
+const layout = require('./templates/layout');
 
 // Configs
 const config = {
@@ -77,6 +78,9 @@ const PromptName = async () => {
         if (TYPE === componentType.container) {
           generateContainer(value.name);
         }
+        if (TYPE === componentType.layout) {
+          generateLayout(value.name);
+        }
       }
     });
   });
@@ -115,6 +119,22 @@ const generateContainer = name => {
   console.log(config.consoleColor.success, `+ ${name}.container.tsx`);
 
   fs.writeFileSync(`${dirPath}/index.ts`, container.index(`${name}.container`));
+  console.log(config.consoleColor.success, `+ index.ts`);
+};
+
+const generateLayout = name => {
+  const dirPath = `${config.outDir}/${componentType.layout}/${name}`;
+  const filePath = `${dirPath}/${name}`;
+
+  fs.mkdirSync(dirPath);
+
+  fs.writeFileSync(`${filePath}.layout.tsx`, layout.tsx(name));
+  console.log(config.consoleColor.success, `+ ${name}.layout.tsx`);
+
+  fs.writeFileSync(`${filePath}.layout.scss`, component.scss(name));
+  console.log(config.consoleColor.success, `+ ${name}.layout.scss`);
+
+  fs.writeFileSync(`${dirPath}/index.ts`, layout.index(name));
   console.log(config.consoleColor.success, `+ index.ts`);
 };
 
