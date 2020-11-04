@@ -152,5 +152,4 @@ const generateLayout = name => {
 };
 
 // Init script
-// GeneratePrompt();
 PromptType();
