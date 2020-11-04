@@ -13,6 +13,7 @@ const config = {
   consoleColor: {
     success: '\x1b[32m%s\x1b[0m',
     error: '\x1b[31m%s\x1b[0m',
+    title: '\x1b[4m%s\x1b[0m',
   },
 };
 const componentType = {
@@ -94,6 +95,10 @@ const generateComponent = name => {
   const dirPath = `${config.outDir}/${componentType.component}/${name}`;
   const filePath = `${dirPath}/${name}`;
 
+  console.log(
+    config.consoleColor.title,
+    `src/${componentType.component}/${name}:`
+  );
   fs.mkdirSync(dirPath);
 
   fs.writeFileSync(`${filePath}.tsx`, component.tsx(name));
@@ -113,6 +118,10 @@ const generateContainer = name => {
   const dirPath = `${config.outDir}/${componentType.container}/${name}`;
   const filePath = `${dirPath}/${name}`;
 
+  console.log(
+    config.consoleColor.title,
+    `src/${componentType.container}/${name}:`
+  );
   fs.mkdirSync(dirPath, { recursive: true });
 
   fs.writeFileSync(`${filePath}.container.tsx`, container.tsx(name));
@@ -126,6 +135,10 @@ const generateLayout = name => {
   const dirPath = `${config.outDir}/${componentType.layout}/${name}`;
   const filePath = `${dirPath}/${name}`;
 
+  console.log(
+    config.consoleColor.title,
+    `src/${componentType.layout}/${name}:`
+  );
   fs.mkdirSync(dirPath);
 
   fs.writeFileSync(`${filePath}.layout.tsx`, layout.tsx(name));
