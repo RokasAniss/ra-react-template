@@ -19,7 +19,7 @@ const IOconfig = {
 
 const config: webpack.Configuration = {
   entry: IOconfig.entry,
-  stats: 'minimal',
+  stats: 'normal',
   devtool: 'source-map',
   output: {
     path: IOconfig.output.dir,
