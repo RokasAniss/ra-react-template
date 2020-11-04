@@ -3,6 +3,8 @@ const prompts = require('prompts');
 const fs = require('fs');
 const path = require('path');
 
+const component = require('./templates/component');
+
 // Configs
 const config = {
   outDir: path.resolve(__dirname, '../src/'),
@@ -86,7 +88,9 @@ const PromptName = async () => {
         console.log(config.consoleColor.error, `${value.name} exists`);
         PromptName();
       } else {
-        console.log('Yay!');
+        if (TYPE === componentType.component) {
+          generateComponent(value.name);
+        }
       }
     });
   });
@@ -94,6 +98,15 @@ const PromptName = async () => {
 
 const checkIfComponentExists = async (name, subdir) => {
   return fs.existsSync(`${config.outDir}/${subdir}/${name}`);
+};
+
+const generateComponent = name => {
+  const dirPath = `${config.outDir}/${TYPE}/${name}`;
+  const filePath = `${dirPath}/${name}`;
+
+  fs.mkdirSync(dirPath);
+  fs.writeFileSync(`${filePath}.tsx`, component.component(name));
+  console.log(config.consoleColor.success, `+ ${name}.tsx`);
 };
 
 // Init script
