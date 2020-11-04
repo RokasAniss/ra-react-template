@@ -2,6 +2,8 @@ import React, { FunctionComponent } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import MainLayout from '@/layouts/MainLayout';
+import Home from '@/views/Home';
+import About from '@/views/About';
 
 const App: FunctionComponent = () => {
   return (
@@ -13,10 +15,10 @@ const App: FunctionComponent = () => {
         </div>
         <Switch>
           <Route path="/" exact>
-            <span>Home</span>
+            <Home />
           </Route>
           <Route path="/about" exact>
-            <span>About</span>
+            <About />
           </Route>
         </Switch>
       </MainLayout>

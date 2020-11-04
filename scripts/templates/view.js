@@ -2,19 +2,13 @@ const changeCase = require('change-case');
 
 const tsx = name => {
   const kebabName = changeCase.paramCase(name);
-  return `import React, { FC, ReactNode } from 'react';
+  return `import React, { FC } from 'react';
 
-const ${name}: FC<${name}Props> = ({
-  children',
-}: ${name}Props) => {
+const ${name}: FC = () => {
   const className = '${kebabName}';
 
-  return <div className={className}>{children}</div>;
+  return <div className={className}>${name} View</div>;
 };
-
-interface ${name}Props {
-  children: ReactNode;
-}
 
 export default ${name};
 `;
