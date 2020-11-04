@@ -2,6 +2,7 @@
   background-color: color('dark');
   display: flex;
   min-height: 100vh;
+  padding-top: spacing('l');
   width: 100vw;
 
   &__logo {
@@ -9,5 +10,13 @@
     position: fixed;
     top: spacing('s');
     transform: translateX(-50%);
+  }
+
+  &__body {
+    align-items: center;
+    color: color('light');
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }

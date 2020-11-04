@@ -6,6 +6,7 @@ const path = require('path');
 const component = require('./templates/component');
 const container = require('./templates/container');
 const layout = require('./templates/layout');
+const view = require('./templates/view');
 
 // Configs
 const config = {
@@ -82,6 +83,9 @@ const PromptName = async () => {
         if (TYPE === componentType.layout) {
           generateLayout(value.name);
         }
+        if (TYPE === componentType.view) {
+          generateView(value.name);
+        }
       }
     });
   });
@@ -148,6 +152,23 @@ const generateLayout = name => {
   console.log(config.consoleColor.success, `+ ${name}.layout.scss`);
 
   fs.writeFileSync(`${dirPath}/index.ts`, layout.index(name));
+  console.log(config.consoleColor.success, `+ index.ts`);
+};
+
+const generateView = name => {
+  const dirPath = `${config.outDir}/${componentType.view}/${name}`;
+  const filePath = `${dirPath}/${name}`;
+
+  console.log(
+    config.consoleColor.title,
+    `src/${componentType.view}/${name}:`
+  );
+  fs.mkdirSync(dirPath, { recursive: true });
+
+  fs.writeFileSync(`${filePath}.view.tsx`, view.tsx(name));
+  console.log(config.consoleColor.success, `+ ${name}.view.tsx`);
+
+  fs.writeFileSync(`${dirPath}/index.ts`, view.index(name));
   console.log(config.consoleColor.success, `+ index.ts`);
 };
 
