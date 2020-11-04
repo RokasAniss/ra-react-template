@@ -48,14 +48,6 @@ import ${name} from './';
 ## Props
 
 <Props of={${name}} />
-
-## Usage
-
-\`\`\`
-import { ${name} } from '@getkevin.eu/kevin-ui';
-...
-<${name} />
-\`\`\`
 `;
 
 const index = name =>
