@@ -66,7 +66,7 @@ const PromptName = async () => {
   await prompts({
     type: 'text',
     name: 'name',
-    message: 'Enter component name:',
+    message: `Enter ${TYPE.slice(0, -1)} name:`,
     // validate: value => (value < 18 ? `Nightclub is 18+ only` : true),
   }).then(value => {
     checkIfComponentExists(value.name, TYPE).then(exists => {
