@@ -15,7 +15,7 @@ const ${name}: FC<${name}Props> = ({
 };
 
 interface ${name}Props {
-  label: string;
+  label?: string;
 }
 
 export default ${name};
