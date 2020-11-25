@@ -148,7 +148,7 @@ const generateLayout = name => {
   fs.writeFileSync(`${filePath}.layout.tsx`, layout.tsx(name));
   console.log(config.consoleColor.success, `+ ${name}.layout.tsx`);
 
-  fs.writeFileSync(`${filePath}.layout.scss`, component.scss(name));
+  fs.writeFileSync(`${filePath}.layout.scss`, layout.scss(name));
   console.log(config.consoleColor.success, `+ ${name}.layout.scss`);
 
   fs.writeFileSync(`${dirPath}/index.ts`, layout.index(name));

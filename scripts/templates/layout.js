@@ -9,7 +9,7 @@ import './${name}.layout.scss';
 const ${name}: FC<${name}Props> = ({
   children,
 }: ${name}Props) => {
-  const className = '${kebabName}';
+  const className = '${kebabName}-layout';
 
   return <div className={className}>{children}</div>;
 };
@@ -24,7 +24,7 @@ export default ${name};
 
 const scss = name => {
   const kebabName = changeCase.paramCase(name);
-  return `.${kebabName} {
+  return `.${kebabName}-layout {
   display: flex;
 }
 `;
