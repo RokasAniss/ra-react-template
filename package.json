@@ -1,6 +1,6 @@
 {
   "name": "ra-react-template",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React Template by Rokas Anisas",
   "main": "index.js",
   "scripts": {
