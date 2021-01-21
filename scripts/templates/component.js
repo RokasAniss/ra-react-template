@@ -30,26 +30,6 @@ const scss = name => {
 `;
 };
 
-const mdx = name =>
-  `---
-name: ${name}
-menu: Components
----
-
-import { Playground, Props } from 'docz';
-import ${name} from './';
-
-# ${name}
-
-<Playground>
-  <${name} />
-</Playground>
-
-## Props
-
-<Props of={${name}} />
-`;
-
 const index = name =>
   `export { default } from './${name}';
 `;
@@ -57,6 +37,5 @@ const index = name =>
 module.exports = {
   tsx: tsx,
   scss: scss,
-  mdx: mdx,
   index: index,
 };

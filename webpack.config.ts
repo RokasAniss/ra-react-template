@@ -10,8 +10,8 @@ const IOconfig = {
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
     dir: path.resolve(__dirname, 'dist'),
-    js: 'app.bundle.[hash].js',
-    css: 'styles.min.[hash].css',
+    js: 'app.bundle.[chunkhash].js',
+    css: 'styles.min.[chunkhash].css',
     assets: 'assets/',
   },
   htmlTemplate: path.resolve(__dirname, 'src/index.html'),
@@ -22,14 +22,10 @@ const config: webpack.Configuration = {
   entry: IOconfig.entry,
   stats: mode === 'production' ? 'normal' : 'minimal',
   devtool: 'source-map',
+  target: 'web',
   output: {
     path: IOconfig.output.dir,
     filename: IOconfig.output.js,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
   },
   resolve: {
     alias: {
@@ -71,7 +67,7 @@ const config: webpack.Configuration = {
             loader: 'file-loader',
             options: {
               outputPath: IOconfig.output.assets,
-              name: '[name].[hash].[ext]',
+              name: '[name].[chunkhash].[ext]',
             },
           },
         ],
