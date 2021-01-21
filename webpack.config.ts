@@ -22,6 +22,7 @@ const config: webpack.Configuration = {
   entry: IOconfig.entry,
   stats: mode === 'production' ? 'normal' : 'minimal',
   devtool: 'source-map',
+  target: 'web',
   output: {
     path: IOconfig.output.dir,
     filename: IOconfig.output.js,
