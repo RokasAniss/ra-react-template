@@ -26,11 +26,6 @@ const config: webpack.Configuration = {
     path: IOconfig.output.dir,
     filename: IOconfig.output.js,
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
