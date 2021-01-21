@@ -111,9 +111,6 @@ const generateComponent = name => {
   fs.writeFileSync(`${filePath}.scss`, component.scss(name));
   console.log(config.consoleColor.success, `+ ${name}.scss`);
 
-  fs.writeFileSync(`${filePath}.mdx`, component.mdx(name));
-  console.log(config.consoleColor.success, `+ ${name}.mdx`);
-
   fs.writeFileSync(`${dirPath}/index.ts`, component.index(name));
   console.log(config.consoleColor.success, `+ index.ts`);
 };
