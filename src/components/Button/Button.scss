@@ -1,4 +1,6 @@
 .button {
+  $_parent: &;
+
   background-color: #eee;
   border: 0;
   border-radius: 5px;
@@ -6,9 +8,16 @@
   display: flex;
   padding: 10px;
   transition: all 0.3s ease;
+
+  &__title {
+    color: #111;
+    transition: all 0.3s ease;
+  }
+
+  &:disabled {
+    #{$_parent}__title {
+      color: #bbb;
+    }
+  }
 }
 
-.button__title {
-  color: #111;
-  transition: all 0.3s ease;
-}
