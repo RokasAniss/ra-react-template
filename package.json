@@ -68,7 +68,7 @@
     "prompts": "^2.4.0",
     "redux-devtools-extension": "^2.13.8",
     "sass": "^1.32.6",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^7.3.1",
     "sass-resources-loader": "^2.1.1",
     "style-loader": "^2.0.0",
     "stylelint": "^13.9.0",
