@@ -1,0 +1,14 @@
+.button {
+  background-color: #eee;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.button__title {
+  color: #111;
+  transition: all 0.3s ease;
+}
