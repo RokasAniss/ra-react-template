@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-// import './Button.scss';
+import './Button.scss';
 
 const Button: FunctionComponent<ButtonProps> = ({
   title,

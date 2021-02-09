@@ -1,33 +1,33 @@
 .button {
   $_parent: &;
 
-  background-color: color('light');
+  background-color: #eee;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  padding: spacing('s');
+  padding: 10px;
   transition: all 0.3s ease;
 
   &__title {
-    color: color('dark');
+    color: #111;
     transition: all 0.3s ease;
   }
 
   &:hover {
-    background-color: darken(color('light'), 70%);
+    background-color: darken(#eee, 70%);
 
     #{$_parent}__title {
-      color: color('light');
+      color: #eee;
     }
   }
 
   &:disabled {
-    background-color: darken(color('light'), 50%);
+    background-color: darken(#eee, 50%);
     cursor: not-allowed;
 
     #{$_parent}__title {
-      color: lighten(color('dark'), 30%);
+      color: lighten(#111, 30%);
     }
   }
 }
