@@ -7,9 +7,6 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
   ],
-  typescript: {
-    check: true,
-  },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
