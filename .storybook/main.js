@@ -5,4 +5,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
   ],
+  webpackFinal: config => {
+    return config;
+  },
 };
