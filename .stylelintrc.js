@@ -21,6 +21,6 @@ module.exports = {
     'selector-pseudo-element-case': 'lower',
     'property-case': 'lower',
     'scss/selector-no-redundant-nesting-selector': true,
-    'sh-waqar/declaration-use-variable': [['color']],
+    // 'sh-waqar/declaration-use-variable': [['color']],
   },
 };

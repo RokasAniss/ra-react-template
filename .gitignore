@@ -3,3 +3,6 @@ dist/
 .docz/
 .DS_Store
 coverage/
+
+# storybook
+storybook-static/
