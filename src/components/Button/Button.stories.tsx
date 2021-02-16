@@ -13,5 +13,5 @@ const Template: Story<ButtonProps> = args => <Button {...args} />;
 
 export const Main = Template.bind({});
 Main.args = {
-  title: 'Jingles',
+  title: 'Button',
 } as ButtonProps;

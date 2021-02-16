@@ -1,7 +1,6 @@
 .button {
   $_parent: &;
 
-  background-color: color('accent');
   border: 0;
   border-radius: 5px;
   cursor: pointer;
@@ -14,7 +13,21 @@
     transition: all 0.3s ease;
   }
 
+  &.-accent {
+    background-color: color('accent');
+
+    #{$_parent}__title {
+      color: color('light');
+    }
+  }
+
+  &.-simple {
+    background-color: #eee;
+  }
+
   &:disabled {
+    background-color: #eee;
+
     #{$_parent}__title {
       color: #bbb;
     }
