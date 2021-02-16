@@ -1,7 +1,7 @@
 .button {
   $_parent: &;
 
-  background-color: #eee;
+  background-color: color('accent');
   border: 0;
   border-radius: 5px;
   cursor: pointer;

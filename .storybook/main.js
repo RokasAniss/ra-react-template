@@ -6,7 +6,17 @@ module.exports = {
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader',
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            resources: path.resolve(__dirname, '../src/theme/res/_index.scss'),
+          },
+        },
+      ],
       include: path.resolve(__dirname, '../'),
     });
     return config;
