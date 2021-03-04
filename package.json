@@ -1,6 +1,6 @@
 {
   "name": "ra-react-template",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "React Template by Rokas Anisas",
   "main": "index.js",
   "scripts": {
@@ -24,10 +24,10 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
     "@storybook/addon-actions": "^6.1.18",
-    "@storybook/addon-essentials": "^6.1.18",
+    "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.18",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.1.18",
+    "@storybook/react": "^6.1.21",
     "@types/browser-sync-webpack-plugin": "^2.2.0",
     "@types/classnames": "^2.2.11",
     "@types/enzyme": "^3.10.8",
