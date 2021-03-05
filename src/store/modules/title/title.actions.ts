@@ -1,9 +1,9 @@
 import { store } from '@/store';
-import { TitleActionTypes, ActionTwo } from './title.actionTypes';
+import { TitleActionTypes, SetName } from './title.actionTypes';
 
-export const actionTwo = (payload: ActionTwo['payload']): void => {
-  const data: ActionTwo = {
-    type: TitleActionTypes.actionTwo,
+export const setName = (payload: SetName['payload']): void => {
+  const data: SetName = {
+    type: TitleActionTypes.setName,
     payload: payload,
   };
   store.dispatch(data);

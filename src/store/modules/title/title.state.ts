@@ -1,3 +1,3 @@
 export interface TitleState {
-  id?: number;
+  name: string;
 }

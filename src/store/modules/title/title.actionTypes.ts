@@ -1,9 +1,8 @@
 import { PayloadAction } from '@/types/app';
 
-
-export type ActionTwo = PayloadAction<TitleActionTypes.actionTwo, number>;
+export type SetName = PayloadAction<TitleActionTypes.setName, string>;
 
 export enum TitleActionTypes {
-  actionTwo = 'ACTION_TWO',
+  setName = 'SET_NAME',
 }
-export type TitleActions = ActionTwo;
+export type TitleActions = SetName;

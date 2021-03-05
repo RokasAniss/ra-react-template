@@ -2,15 +2,15 @@ import { TitleActions, TitleActionTypes } from './title.actionTypes';
 import { TitleState } from './title.state';
 
 const initialState: TitleState = {
-  id: 0,
+  name: 'ra-react-template',
 };
 
 export const titleReducer = (state = initialState, action: TitleActions): TitleState => {
   switch (action.type) {
-    case TitleActionTypes.actionTwo:
+    case TitleActionTypes.setName:
       return {
         ...state,
-        id: action.payload,
+        name: action.payload,
       };
     default:
       return state;
