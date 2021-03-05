@@ -6,7 +6,7 @@ const tsx = name => {
 import { connect } from 'react-redux';
 
 import { ApplicationState } from 'store';
-import ContainerBase from 'components/ContainerBase';
+import ContainerBase from '@/components/ContainerBase';
 
 const ${name}: FC<${name}Props> = ({ appState }: ${name}Props) => {
   console.log(appState);
