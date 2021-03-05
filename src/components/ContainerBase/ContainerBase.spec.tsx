@@ -4,7 +4,10 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import ContainerBase, { ContainerBaseProps } from './ContainerBase';
 
 describe('ContainerBase', () => {
-  const defaultProps: ContainerBaseProps = {};
+  const defaultProps: ContainerBaseProps = {
+    children: <div>Test</div>,
+    id: 'test-id'
+  };
 
   const createWrapper = (props: Partial<ContainerBaseProps> = {}): ShallowWrapper =>
     shallow(<ContainerBase {...defaultProps} {...props} />);

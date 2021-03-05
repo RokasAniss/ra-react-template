@@ -217,8 +217,8 @@ const generateStoreObject = name => {
   fs.writeFileSync(`${filePath}.reducer.ts`, storeObject.reducer(name));
   console.log(config.consoleColor.success, `+ ${name}.reducer.ts`);
 
-  fs.writeFileSync(`${filePath}.sagas.ts`, storeObject.sagas(name));
-  console.log(config.consoleColor.success, `+ ${name}.sagas.ts`);
+  // fs.writeFileSync(`${filePath}.sagas.ts`, storeObject.sagas(name));
+  // console.log(config.consoleColor.success, `+ ${name}.sagas.ts`);
 
   console.log(
     `Don't forget to add '${name}' to global ApplicationState, rootReducer and rootSaga`

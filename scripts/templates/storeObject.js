@@ -9,7 +9,7 @@ const state = name => {
 
 const actionTypes = name => {
   const PascalName = changeCase.pascalCase(name);
-  return `import { Action, PayloadAction } from 'types/app';
+  return `import { Action, PayloadAction } from '@/types/app';
 
 export type ActionOne = Action<${PascalName}ActionTypes.actionOne>;
 
@@ -25,7 +25,7 @@ export type ${PascalName}Actions = ActionOne | ActionTwo;
 
 const actions = name => {
   const PascalName = changeCase.pascalCase(name);
-  return `import store from 'store';
+  return `import { store } from '@/store';
 import { ${PascalName}ActionTypes, ActionOne, ActionTwo } from './${name}.actionTypes';
 
 export const actionOne = (): void => {
@@ -54,7 +54,7 @@ const initialState: ${PascalName}State = {
   id: 0,
 };
 
-const ${name}Reducer = (state = initialState, action: ${PascalName}Actions): ${PascalName}State => {
+export const ${name}Reducer = (state = initialState, action: ${PascalName}Actions): ${PascalName}State => {
   switch (action.type) {
     case ${PascalName}ActionTypes.actionTwo:
       return {
@@ -65,8 +65,6 @@ const ${name}Reducer = (state = initialState, action: ${PascalName}Actions): ${P
       return state;
   }
 };
-
-export default ${name}Reducer;
 `;
 };
 
