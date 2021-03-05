@@ -6,9 +6,7 @@ const tsx = name => {
 
 import './${name}.layout.scss';
 
-const ${name}: FC<${name}Props> = ({
-  children,
-}: ${name}Props) => {
+const ${name}: FC<${name}Props> = ({ children }: ${name}Props) => {
   const className = '${kebabName}-layout';
 
   return <div className={className}>{children}</div>;

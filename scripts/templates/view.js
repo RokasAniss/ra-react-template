@@ -5,9 +5,7 @@ const tsx = name => {
   return `import React, { FC } from 'react';
 
 const ${name}: FC = () => {
-  const className = '${kebabName}';
-
-  return <div className={className}>${name} View</div>;
+  return <div id="${kebabName}-view">${name}</div>;
 };
 
 export default ${name};

@@ -14,7 +14,7 @@ const ${name}: FC<${name}Props> = ({
   return <div className={className}>{label}</div>;
 };
 
-interface ${name}Props {
+export interface ${name}Props {
   label?: string;
 }
 
@@ -30,6 +30,27 @@ const scss = name => {
 `;
 };
 
+const spec = name => {
+  return `import React from 'react';
+import { shallow, ShallowWrapper } from 'enzyme';
+
+import ${name}, { ${name}Props } from './${name}';
+
+describe('${name}', () => {
+  const defaultProps: ${name}Props = {};
+
+  const createWrapper = (props: Partial<${name}Props> = {}): ShallowWrapper =>
+    shallow(<${name} {...defaultProps} {...props} />);
+
+  it('Should render component', () => {
+    const wrapper = createWrapper();
+
+    expect(wrapper.exists()).toBe(true);
+  });
+});
+`;
+};
+
 const index = name =>
   `export { default } from './${name}';
 `;
@@ -38,4 +59,5 @@ module.exports = {
   tsx: tsx,
   scss: scss,
   index: index,
+  spec: spec,
 };
