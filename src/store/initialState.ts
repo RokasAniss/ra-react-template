@@ -1,4 +1,4 @@
-import { ApplicationState } from './types/applicationState';
+import { ApplicationState } from './ApplicationState.type';
 
 const initialState: ApplicationState = {
   title: 'ra-react-template',
