@@ -137,6 +137,9 @@ const generateComponent = name => {
   fs.writeFileSync(`${filePath}.spec.tsx`, component.spec(name));
   console.log(config.consoleColor.success, `+ ${name}.spec.tsx`);
 
+  fs.writeFileSync(`${filePath}.story.tsx`, component.story(name));
+  console.log(config.consoleColor.success, `+ ${name}.story.tsx`);
+
   fs.writeFileSync(`${filePath}.scss`, component.scss(name));
   console.log(config.consoleColor.success, `+ ${name}.scss`);
 
