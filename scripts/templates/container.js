@@ -37,13 +37,13 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import type { MemoryRouterProps } from 'react-router';
 
-import { DeepPartial } from 'types/helpers';
+// import { DeepPartial } from 'types/helpers';
 import { ApplicationState } from 'store';
 
 import ${name}, { ${name}Props } from './${name}.container';
 
 describe('${name}', () => {
-  const mockState: DeepPartial<ApplicationState> = {};
+  const mockState: Partial<ApplicationState> = {};
 
   const store = configureStore([])({
     ...mockState,
