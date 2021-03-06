@@ -226,10 +226,18 @@ const generateStoreObject = name => {
   // console.log(config.consoleColor.success, `+ ${name}.sagas.ts`);
 
   // Append new line to rootReducer
-  fileReplaceLine(config.rootReducer, [{
-    from: '// Reducer import',
-    to: `james`,
-  }]);
+  fileReplaceLine(config.rootReducer, [
+    {
+      from: '// Reducer import',
+      to: `import { ${name}Reducer } from './modules/${name}/${name}.reducer';
+// Reducer import`,
+    },
+    {
+      from: '// Reducer declare',
+      to: `${name}: ${name}Reducer,
+  // Reducer declare`,
+    },
+  ]);
 };
 
 // Init script

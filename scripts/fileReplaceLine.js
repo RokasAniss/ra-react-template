@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-module.exports = ({ filePath, toReplaceArray }) => {
+module.exports = (filePath, toReplaceArray) => {
   fs.readFile(filePath, 'utf8', function (err, data) {
     if (err) {
       return console.log(err);

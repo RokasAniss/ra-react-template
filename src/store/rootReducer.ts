@@ -7,5 +7,5 @@ import { titleReducer } from './modules/title/title.reducer';
 
 export const rootReducer: Partial<ReducersMapObject<ApplicationState>> = {
   title: titleReducer,
-   // Reducer declare
+  // Reducer declare
 };
