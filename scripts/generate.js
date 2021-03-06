@@ -8,10 +8,12 @@ const container = require('./templates/container');
 const layout = require('./templates/layout');
 const view = require('./templates/view');
 const storeObject = require('./templates/storeObject');
+const fileReplaceLine = require('./fileReplaceLine');
 
 // Configs
 const config = {
   outDir: path.resolve(__dirname, '../src/'),
+  rootReducer: path.resolve(__dirname, '../src/store/rootReducer.ts'),
   consoleColor: {
     success: '\x1b[32m%s\x1b[0m',
     error: '\x1b[31m%s\x1b[0m',
@@ -223,9 +225,11 @@ const generateStoreObject = name => {
   // fs.writeFileSync(`${filePath}.sagas.ts`, storeObject.sagas(name));
   // console.log(config.consoleColor.success, `+ ${name}.sagas.ts`);
 
-  console.log(
-    `Don't forget to add '${name}' to global ApplicationState, rootReducer and rootSaga`
-  );
+  // Append new line to rootReducer
+  fileReplaceLine(config.rootReducer, [{
+    from: '// Reducer import',
+    to: `james`,
+  }]);
 };
 
 // Init script
