@@ -7,3 +7,11 @@ Certain config files and directories are hidden from file explorer, to have a mo
 ### Structure `(src/)`
 
 - `src/components` UI components only, no direct connection to store or api calls in here
+
+### `npm run generate`
+Can help you generate the following:
+- Component
+- Container
+- View
+- Layout
+- Store module
