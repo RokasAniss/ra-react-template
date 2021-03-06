@@ -4,10 +4,10 @@ const tsx = name => {
   const kebabName = changeCase.paramCase(name);
   return `import React, { FC } from 'react';
 
-const ${name}: FC = () => {
-  const className = '${kebabName}';
+import ViewBase from '@/components/ViewBase';
 
-  return <div className={className}>${name} View</div>;
+const ${name}: FC = () => {
+  return <ViewBase id="${kebabName}-view">${name}</ViewBase>;
 };
 
 export default ${name};
