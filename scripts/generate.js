@@ -244,21 +244,21 @@ ${reducerImportLine}`,
   ]);
 
   // Add to ApplicationState
-//   const stateImportLine = '// State import';
-//   const stateDeclareLine = '// State declare';
-//   const PascalName = changeCase.pascalCase(name);
-//   fileReplaceLine(config.applicationState, [
-//     {
-//       from: stateImportLine,
-//       to: `import { ${PascalName}State } from './modules/${name}/${name}.state';';
-// ${stateImportLine}`,
-//     },
-//     {
-//       from: stateDeclareLine,
-//       to: `${name}: ${PascalName}State;
-//   ${stateDeclareLine}`,
-//     },
-//   ]);
+  const stateImportLine = '// State import';
+  const stateDeclareLine = '// State declare';
+  const PascalName = changeCase.pascalCase(name);
+  fileReplaceLine(config.applicationState, [
+    {
+      from: stateImportLine,
+      to: `import { ${PascalName}State } from './modules/${name}/${name}.state';
+${stateImportLine}`,
+    },
+    {
+      from: stateDeclareLine,
+      to: `${name}: ${PascalName}State;
+  ${stateDeclareLine}`,
+    },
+  ]);
 };
 
 // Init script
