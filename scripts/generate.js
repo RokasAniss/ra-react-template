@@ -2,6 +2,7 @@
 const prompts = require('prompts');
 const fs = require('fs');
 const path = require('path');
+const changeCase = require('change-case');
 
 const component = require('./templates/component');
 const container = require('./templates/container');
@@ -14,6 +15,7 @@ const fileReplaceLine = require('./fileReplaceLine');
 const config = {
   outDir: path.resolve(__dirname, '../src/'),
   rootReducer: path.resolve(__dirname, '../src/store/rootReducer.ts'),
+  applicationState: path.resolve(__dirname, '../src/store/ApplicationState.type.ts'),
   consoleColor: {
     success: '\x1b[32m%s\x1b[0m',
     error: '\x1b[31m%s\x1b[0m',
@@ -225,17 +227,36 @@ const generateStoreObject = name => {
   // fs.writeFileSync(`${filePath}.sagas.ts`, storeObject.sagas(name));
   // console.log(config.consoleColor.success, `+ ${name}.sagas.ts`);
 
-  // Append new line to rootReducer
-  fileReplaceLine(config.rootReducer, [
+  // Add to rootReducer
+  const reducerImportLine = '// Reducer import';
+  const reducerDeclareLine = '// Reducer import';
+  fileReplaceLine(config.applicationState, [
     {
-      from: '// Reducer import',
+      from: reducerImportLine,
       to: `import { ${name}Reducer } from './modules/${name}/${name}.reducer';
-// Reducer import`,
+${reducerImportLine}`,
     },
     {
-      from: '// Reducer declare',
+      from: reducerDeclareLine,
       to: `${name}: ${name}Reducer,
-  // Reducer declare`,
+  ${reducerDeclareLine}`,
+    },
+  ]);
+
+  // Add to ApplicationState
+  const stateImportLine = '// State import';
+  const stateDeclareLine = '// State declare';
+  const PascalName = changeCase.pascalCase(name);
+  fileReplaceLine(config.applicationState, [
+    {
+      from: stateImportLine,
+      to: `import { ${PascalName}State } from './modules/${name}/${name}.state';';
+${stateImportLine}`,
+    },
+    {
+      from: stateDeclareLine,
+      to: `${name}: ${PascalName}State;
+  ${stateDeclareLine}`,
     },
   ]);
 };
