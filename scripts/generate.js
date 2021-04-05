@@ -126,26 +126,28 @@ const checkIfComponentExists = async (name, subdir) => {
 };
 
 const generateComponent = name => {
-  const dirPath = `${config.outDir}/${templateType.component}/${name}`;
-  const filePath = `${dirPath}/${name}`;
+  const pascalName = changeCase.pascalCase(name);
+
+  const dirPath = `${config.outDir}/${templateType.component}/${pascalName}`;
+  const filePath = `${dirPath}/${pascalName}`;
 
   console.log(
     config.consoleColor.title,
-    `src/${templateType.component}/${name}:`
+    `src/${templateType.component}/${pascalName}:`
   );
   fs.mkdirSync(dirPath);
 
   fs.writeFileSync(`${filePath}.tsx`, component.tsx(name));
-  console.log(config.consoleColor.success, `+ ${name}.tsx`);
+  console.log(config.consoleColor.success, `+ ${pascalName}.tsx`);
 
   fs.writeFileSync(`${filePath}.spec.tsx`, component.spec(name));
-  console.log(config.consoleColor.success, `+ ${name}.spec.tsx`);
+  console.log(config.consoleColor.success, `+ ${pascalName}.spec.tsx`);
 
   fs.writeFileSync(`${filePath}.story.tsx`, component.story(name));
-  console.log(config.consoleColor.success, `+ ${name}.story.tsx`);
+  console.log(config.consoleColor.success, `+ ${pascalName}.story.tsx`);
 
   fs.writeFileSync(`${filePath}.scss`, component.scss(name));
-  console.log(config.consoleColor.success, `+ ${name}.scss`);
+  console.log(config.consoleColor.success, `+ ${pascalName}.scss`);
 
   fs.writeFileSync(`${dirPath}/index.ts`, component.index(name));
   console.log(config.consoleColor.success, `+ index.ts`);
