@@ -146,7 +146,7 @@ const generateComponent = name => {
   fs.writeFileSync(`${filePath}.story.tsx`, component.story(name));
   console.log(config.consoleColor.success, `+ ${pascalName}.story.tsx`);
 
-  fs.writeFileSync(`${filePath}.scss`, component.scss(name));
+  fs.writeFileSync(`${filePath}.module.scss`, component.scss(name));
   console.log(config.consoleColor.success, `+ ${pascalName}.scss`);
 
   fs.writeFileSync(`${dirPath}/index.ts`, component.index(name));

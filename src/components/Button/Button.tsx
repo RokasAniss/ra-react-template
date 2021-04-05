@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-
 import classNames from 'classnames/bind';
 
 import style from './Button.module.scss';

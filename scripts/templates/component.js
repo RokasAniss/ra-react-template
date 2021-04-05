@@ -5,15 +5,17 @@ const tsx = name => {
   const pascalName = changeCase.pascalCase(name);
 
   return `import React, { FC } from 'react';
+import classNames from 'classnames/bind';
 
-import './${pascalName}.scss';
+import style from './${pascalName}.scss';
+const cx = classNames.bind(style);
 
 const ${pascalName}: FC<${pascalName}Props> = ({
   label = '${name}',
 }: ${pascalName}Props) => {
   const className = '${kebabName}';
 
-  return <div className={className}>{label}</div>;
+  return <div className={cx(className)}>{label}</div>;
 };
 
 export interface ${pascalName}Props {
