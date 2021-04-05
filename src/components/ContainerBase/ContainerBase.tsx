@@ -1,14 +1,12 @@
 import React, { FC, ReactNode } from 'react';
 
-import './ContainerBase.scss';
+import style from './ContainerBase.module.scss';
 
 const ContainerBase: FC<ContainerBaseProps> = ({
   children,
   id,
 }: ContainerBaseProps) => {
-  const className = 'container-base';
-
-  return <div id={id} className={className}>{children}</div>;
+  return <div id={id} className={style['container-base']}>{children}</div>;
 };
 
 export interface ContainerBaseProps {
