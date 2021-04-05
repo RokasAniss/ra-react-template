@@ -7,7 +7,7 @@ const tsx = name => {
   return `import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
-import style from './${pascalName}.scss';
+import style from './${pascalName}.module.scss';
 const cx = classNames.bind(style);
 
 const ${pascalName}: FC<${pascalName}Props> = ({
