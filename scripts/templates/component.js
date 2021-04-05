@@ -73,7 +73,7 @@ export default {
 
 const Template: Story<${pascalName}Props> = args => <${pascalName} {...args} />;
 
-export const Accent = Template.bind({});
+export const Default = Template.bind({});
 Accent.args = {
   label: '${pascalName}',
 } as ${pascalName}Props;
