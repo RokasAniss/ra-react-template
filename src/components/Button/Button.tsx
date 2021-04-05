@@ -1,10 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
 
-import './Button.scss';
+import classNames from 'classnames/bind';
+
+import style from './Button.module.scss';
+const cx = classNames.bind(style);
 
 const Button: FunctionComponent<ButtonProps> = ({
-  title,
+  label,
   disabled,
   variant = 'accent',
 }: ButtonProps) => {
@@ -12,16 +14,16 @@ const Button: FunctionComponent<ButtonProps> = ({
 
   return (
     <button
-      className={classNames(className, `-${variant}`)}
+      className={cx(className, `-${variant}`)}
       disabled={disabled}
     >
-      <span className={`${className}__title`}>{title}</span>
+      <span className={cx(`${className}__title`)}>{label}</span>
     </button>
   );
 };
 
 export interface ButtonProps {
-  title?: string;
+  label?: string;
   disabled?: boolean;
   variant?: 'accent' | 'simple';
 }
