@@ -49,7 +49,15 @@ const config: webpack.Configuration = {
         test: /\.scss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
+          },
           'postcss-loader',
           'sass-loader',
           {
@@ -62,10 +70,7 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.css$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(jpg|png|svg|gif)$/,

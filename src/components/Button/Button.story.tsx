@@ -12,11 +12,11 @@ const Template: Story<ButtonProps> = args => <Button {...args} />;
 
 export const Accent = Template.bind({});
 Accent.args = {
-  title: 'Button',
+  label: 'Button',
 } as ButtonProps;
 
 export const Simple = Template.bind({});
 Simple.args = {
-  title: 'Button',
+  label: 'Button',
   variant: 'simple',
 } as ButtonProps;

@@ -5,7 +5,7 @@ import Button, { ButtonProps } from './Button';
 
 describe('Button', () => {
   const defaultProps: ButtonProps = {
-    title: 'Buttonas',
+    label: 'Buttonas',
   };
 
   const createWrapper = (props: Partial<ButtonProps> = {}) =>

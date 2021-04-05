@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+
 import Title from '@/containers/Title';
+import Button from '@/components/Button';
 
 const Home: FC = () => {
   const className = 'home';
@@ -9,6 +11,7 @@ const Home: FC = () => {
       <Title />
       <br/>
       Home View
+      <Button label="Clicker me" variant="simple" />
     </div>
   );
 };
