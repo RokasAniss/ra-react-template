@@ -51,6 +51,12 @@ const config: webpack.Configuration = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
           },
           'postcss-loader',
           'sass-loader',
