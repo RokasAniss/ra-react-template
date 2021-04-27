@@ -1,0 +1,89 @@
+{
+  "name": "Component",
+  "description": "Generate a component",
+  "add": [
+    {
+      "dirPath": "src/components/[ModuleName]",
+      "files": [
+        {
+          "fileName": "[ModuleName].tsx",
+          "template": [
+            "import React from 'react';",
+            "import classNames from 'classnames/bind';",
+            "",
+            "import style from './${pascalName}.module.scss';",
+            "const cx = classNames.bind(style);",
+            "",
+            "const ${pascalName}: FC<${pascalName}Props> = ({",
+            "  label = '${name}',",
+            "}: ${pascalName}Props) => {",
+            "  const className = '${kebabName}';",
+            "",
+            "  return <div className={cx(className)}>{label}</div>;",
+            "};",
+            "",
+            "export interface ${pascalName}Props {",
+            "  label?: string;",
+            "}",
+            "",
+            "export default ${pascalName};",
+            ""
+          ]
+        },
+        {
+          "fileName": "[ModuleName].module.scss",
+          "template": [".${kebabName} {", "  display: flex;", "}", ""]
+        },
+        {
+          "fileName": "[ModuleName].spec.ts",
+          "template": [
+            "import React from 'react';",
+            "import { shallow, ShallowWrapper } from 'enzyme';",
+            "",
+            "import ${pascalName}, { ${pascalName}Props } from './${pascalName}';",
+            "",
+            "describe('${pascalName}', () => {",
+            "  const defaultProps: ${pascalName}Props = {};",
+            "",
+            "  const createWrapper = (props: Partial<${pascalName}Props> = {}): ShallowWrapper =>",
+            "    shallow(<${pascalName} {...defaultProps} {...props} />);",
+            "",
+            "  it('Should render component', () => {",
+            "    const wrapper = createWrapper();",
+            "",
+            "    expect(wrapper.exists()).toBe(true);",
+            "  });",
+            "});",
+            ""
+          ]
+        },
+        {
+          "fileName": "[ModuleName].story.ts",
+          "template": [
+            "import React from 'react';",
+            "import { Story, Meta } from '@storybook/react/types-6-0';",
+            "",
+            "import ${pascalName}, { ${pascalName}Props } from './${pascalName}';",
+            "",
+            "export default {",
+            "  title: 'Components/${pascalName}',",
+            "  component: ${pascalName},",
+            "} as Meta;",
+            "",
+            "const Template: Story<${pascalName}Props> = args => <${pascalName} {...args} />;",
+            "",
+            "export const Default = Template.bind({});",
+            "Default.args = {",
+            "  label: '${pascalName}',",
+            "} as ${pascalName}Props;",
+            ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": ["export { default } from './[ModuleName]';", ""]
+        }
+      ]
+    }
+  ]
+}
