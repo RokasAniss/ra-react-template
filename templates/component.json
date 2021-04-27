@@ -35,7 +35,7 @@
           "template": [".[module-name] {", "  display: flex;", "}", ""]
         },
         {
-          "fileName": "[ModuleName].spec.ts",
+          "fileName": "[ModuleName].spec.tsx",
           "template": [
             "import React from 'react';",
             "import { shallow, ShallowWrapper } from 'enzyme';",
