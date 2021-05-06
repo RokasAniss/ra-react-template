@@ -1,0 +1,29 @@
+{
+  "name": "Container",
+  "description": "Generate a stateful component",
+  "add": [
+    {
+      "dirPath": "src/containers/[ModuleName]",
+      "files": [
+        {
+          "fileName": "[ModuleName].tsx",
+          "template": [
+            "import React, { Fragment } from 'react';",
+            "import classNames from 'classnames/bind';",
+            "",
+            "const [ModuleName] = () => {",
+            "  return <Fragment>{label}</Fragment>;",
+            "};",
+            "",
+            "export default [ModuleName];",
+            ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": ["export { default } from './[ModuleName]';", ""]
+        }
+      ]
+    }
+  ]
+}
