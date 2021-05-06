@@ -6,7 +6,7 @@
       "dirPath": "src/containers/[ModuleName]",
       "files": [
         {
-          "fileName": "[ModuleName].tsx",
+          "fileName": "[ModuleName].container.tsx",
           "template": [
             "import React, { FC } from 'react';",
             "import { connect } from 'react-redux';",
@@ -35,7 +35,7 @@
         },
         {
           "fileName": "index.ts",
-          "template": ["export { default } from './[ModuleName]';", ""]
+          "template": ["export { default } from './[ModuleName].container';", ""]
         }
       ]
     }
