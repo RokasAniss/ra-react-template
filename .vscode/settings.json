@@ -14,7 +14,6 @@
     ".stylelintrc.js": true,
     "babel.config.js": true,
     "jest.config.js": true,
-    "package-lock.json": true,
     "postcss.config.js": true,
     "tsconfig.json": true,
     "node_modules/": true,
