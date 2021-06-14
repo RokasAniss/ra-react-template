@@ -10,7 +10,11 @@ const ContainerBase: FC<ContainerBaseProps> = ({
 }: ContainerBaseProps) => {
   const className = 'container-base';
 
-  return <div id={id} className={cx(className)}>{children}</div>;
+  return (
+    <div id={id} className={cx(className)}>
+      {children}
+    </div>
+  );
 };
 
 export interface ContainerBaseProps {

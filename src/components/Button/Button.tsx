@@ -12,10 +12,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   const className = 'button';
 
   return (
-    <button
-      className={cx(className, `-${variant}`)}
-      disabled={disabled}
-    >
+    <button className={cx(className, `-${variant}`)} disabled={disabled}>
       <span className={cx(`${className}__title`)}>{label}</span>
     </button>
   );
