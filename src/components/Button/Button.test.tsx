@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 
 import Button, { ButtonProps } from './Button';
 
@@ -8,7 +8,7 @@ describe('Button', () => {
     label: 'Buttonas',
   };
 
-  const createWrapper = (props: Partial<ButtonProps> = {}) =>
+  const createWrapper = (props: Partial<ButtonProps> = {}): ShallowWrapper =>
     shallow(<Button {...defaultProps} {...props} />);
 
   it('Should render title', () => {
