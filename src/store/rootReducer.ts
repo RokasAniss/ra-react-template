@@ -1,10 +1,13 @@
-import { ReducersMapObject } from 'redux';
+import { combineReducers } from 'redux';
 
-import { ApplicationState } from './ApplicationState.type';
 import { titleReducer } from './modules/title/title.reducer';
-// Reducer import
+// IMPORT_REDUCER
 
-export const rootReducer: Partial<ReducersMapObject<ApplicationState>> = {
-  title: titleReducer,
-  // Reducer declare
-};
+// eslint-disable-next-line
+export const rootReducer = () =>
+  combineReducers({
+    title: titleReducer,
+    // DECLARE_REDUCER
+  });
+
+export type State = ReturnType<ReturnType<typeof rootReducer>>;

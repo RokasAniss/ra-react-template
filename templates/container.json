@@ -1,0 +1,43 @@
+{
+  "name": "Container",
+  "description": "Generate a stateful component",
+  "add": [
+    {
+      "dirPath": "src/containers/[ModuleName]",
+      "files": [
+        {
+          "fileName": "[ModuleName].container.tsx",
+          "template": [
+            "import React, { FC } from 'react';",
+            "import { connect } from 'react-redux';",
+            "",
+            "import { ApplicationState } from '@/store';",
+            "import ContainerBase from '@/components/ContainerBase';",
+            "",
+            "const [ModuleName]: FC<[ModuleName]StateProps> = ({",
+            "  state,",
+            "}: [ModuleName]StateProps) => {",
+            "  console.log(state);",
+            "  return <ContainerBase id=\"[module-name]\">[ModuleName]</ContainerBase>;",
+            "};",
+            "",
+            "interface [ModuleName]StateProps {",
+            "  state: ApplicationState;",
+            "}",
+            "",
+            "const mapStateToProps = (state: ApplicationState): [ModuleName]StateProps => ({",
+            "  state: state,",
+            "});",
+            "",
+            "export default connect(mapStateToProps)([ModuleName]);",
+            ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": ["export { default } from './[ModuleName].container';", ""]
+        }
+      ]
+    }
+  ]
+}

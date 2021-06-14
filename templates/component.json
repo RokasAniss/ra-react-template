@@ -1,0 +1,89 @@
+{
+  "name": "Component",
+  "description": "Generate a component",
+  "add": [
+    {
+      "dirPath": "src/components/[ModuleName]",
+      "files": [
+        {
+          "fileName": "[ModuleName].tsx",
+          "template": [
+            "import React, { FC } from 'react';",
+            "import classNames from 'classnames/bind';",
+            "",
+            "import style from './[ModuleName].module.scss';",
+            "const cx = classNames.bind(style);",
+            "",
+            "const [ModuleName]: FC<[ModuleName]Props> = ({",
+            "  label = '[ModuleName]',",
+            "}) => {",
+            "  const className = '[module-name]';",
+            "",
+            "  return <div className={cx(className)}>{label}</div>;",
+            "};",
+            "",
+            "export interface [ModuleName]Props {",
+            "  label?: string;",
+            "}",
+            "",
+            "export default [ModuleName];",
+            ""
+          ]
+        },
+        {
+          "fileName": "[ModuleName].module.scss",
+          "template": [".[module-name] {", "  display: flex;", "}", ""]
+        },
+        {
+          "fileName": "[ModuleName].spec.tsx",
+          "template": [
+            "import React from 'react';",
+            "import { shallow, ShallowWrapper } from 'enzyme';",
+            "",
+            "import [ModuleName], { [ModuleName]Props } from './[ModuleName]';",
+            "",
+            "describe('[ModuleName]', () => {",
+            "  const defaultProps: [ModuleName]Props = {};",
+            "",
+            "  const createWrapper = (props: Partial<[ModuleName]Props> = {}): ShallowWrapper =>",
+            "    shallow(<[ModuleName] {...defaultProps} {...props} />);",
+            "",
+            "  it('Should render component', () => {",
+            "    const wrapper = createWrapper();",
+            "",
+            "    expect(wrapper.exists()).toBe(true);",
+            "  });",
+            "});",
+            ""
+          ]
+        },
+        {
+          "fileName": "[ModuleName].story.tsx",
+          "template": [
+            "import React from 'react';",
+            "import { Story, Meta } from '@storybook/react/types-6-0';",
+            "",
+            "import [ModuleName], { [ModuleName]Props } from './[ModuleName]';",
+            "",
+            "export default {",
+            "  title: 'Components/[ModuleName]',",
+            "  component: [ModuleName],",
+            "} as Meta;",
+            "",
+            "const Template: Story<[ModuleName]Props> = args => <[ModuleName] {...args} />;",
+            "",
+            "export const Default = Template.bind({});",
+            "Default.args = {",
+            "  label: '[ModuleName]',",
+            "} as [ModuleName]Props;",
+            ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": ["export { default } from './[ModuleName]';", ""]
+        }
+      ]
+    }
+  ]
+}
