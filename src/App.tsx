@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { paths } from '@/routes';
@@ -6,7 +6,7 @@ import MainLayout from '@/layouts/MainLayout';
 import Home from '@/views/Home';
 import About from '@/views/About';
 
-const App: FunctionComponent = () => {
+const App: FC = () => {
   return (
     <Router>
       <MainLayout>

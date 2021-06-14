@@ -1,10 +1,10 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import Logo from '@/components/Logo';
 
 import './MainLayout.scss';
 
-const MainLayout: FunctionComponent<MainLayoutProps> = ({
+const MainLayout: FC<MainLayoutProps> = ({
   children,
 }: MainLayoutProps) => {
   const className = 'main-layout';

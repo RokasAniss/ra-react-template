@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
 import './Logo.scss';
 
-const Logo: FunctionComponent = () => {
+const Logo: FC = () => {
   const className = 'logo';
 
   return (

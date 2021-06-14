@@ -3,11 +3,11 @@
     "scope": "typescript,typescriptreact",
     "prefix": "racomp",
     "body": [
-      "import React, { FunctionComponent, ReactNode } from 'react';",
+      "import React, { FC, ReactNode } from 'react';",
       "",
       "import './$TM_FILENAME_BASE.scss';",
       "",
-      "const $TM_FILENAME_BASE: FunctionComponent<${TM_FILENAME_BASE}Props> = ({ children }: ${TM_FILENAME_BASE}Props) => {",
+      "const $TM_FILENAME_BASE: FC<${TM_FILENAME_BASE}Props> = ({ children }: ${TM_FILENAME_BASE}Props) => {",
       "	const className = \"${TM_FILENAME_BASE/([A-Z][a-z]*)([A-Z][a-z]*)?([A-Z][a-z]*)?([A-Z][a-z]*)?/${1:/downcase}${2:+-}${2:/downcase}${3:+-}${3:/downcase}${4:+-}${4:/downcase}/}\";",
       "",
       "	return (",

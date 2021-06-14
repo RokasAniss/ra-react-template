@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
 import style from './Button.module.scss';
 const cx = classNames.bind(style);
 
-const Button: FunctionComponent<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   label,
   disabled,
   variant = 'accent',
