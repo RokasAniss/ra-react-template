@@ -9,7 +9,7 @@ const Home: FC = () => {
   return (
     <div className={className}>
       <Title />
-      <br/>
+      <br />
       Home View
       <Button label="Clicker me" variant="simple" />
     </div>

@@ -1,4 +1,5 @@
 import { store } from '@/store';
+
 import { TitleActionTypes, SetName } from './title.actionTypes';
 
 export const setName = (payload: SetName['payload']): void => {
