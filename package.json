@@ -9,7 +9,7 @@
     "lint": "stylelint  **/*.scss && eslint \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\" && eslint --fix \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "test": "jest",
-    "generate": "motem templates",
+    "generate": "motem templates && npm run lint:fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
