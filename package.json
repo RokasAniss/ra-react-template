@@ -7,7 +7,7 @@
     "start": "webpack serve --mode development --env development",
     "build": "webpack --mode production",
     "lint": "stylelint  **/*.scss && eslint \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
-    "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
+    "lint:fix": "stylelint --fix **/*.scss && prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\" && eslint --fix \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
     "test": "jest",
     "generate": "node scripts/generate.js",
     "storybook": "start-storybook -p 6006",

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-
 import Logo from '@/components/Logo';
 
 import './MainLayout.scss';

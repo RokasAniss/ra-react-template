@@ -5,14 +5,17 @@ const initialState: TitleState = {
   name: 'ra-react-template',
 };
 
-export const titleReducer = (state = initialState, action: TitleActions): TitleState => {
+export const titleReducer = (
+  state = initialState,
+  action: TitleActions
+): TitleState => {
   switch (action.type) {
-    case TitleActionTypes.setName:
-      return {
-        ...state,
-        name: action.payload,
-      };
-    default:
-      return state;
+  case TitleActionTypes.setName:
+    return {
+      ...state,
+      name: action.payload,
+    };
+  default:
+    return state;
   }
 };
