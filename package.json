@@ -52,6 +52,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.21.0",
     "eslint-config-ra-react": "^1.0.1",
+    "eslint-import-resolver-webpack": "^0.13.1",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.2.0",
     "fs": "0.0.1-security",
@@ -94,6 +95,13 @@
     "redux": "^4.0.5"
   },
   "eslintConfig": {
-    "extends": "ra-react"
+    "extends": "ra-react",
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "./webpack.config.ts"
+        }
+      }
+    }
   }
 }
