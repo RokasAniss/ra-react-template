@@ -1,8 +1,15 @@
+# node
 node_modules/
-dist/
-.docz/
-.DS_Store
+
+# test
 coverage/
+
+# OS
+.DS_Store
 
 # storybook
 storybook-static/
+
+# build
+dist/
+.docz/
