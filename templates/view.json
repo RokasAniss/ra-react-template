@@ -1,0 +1,35 @@
+{
+  "name": "View",
+  "description": "Generate a view stateful component",
+  "add": [
+    {
+      "dirPath": "src/views/[ModuleName]",
+      "files": [
+        {
+          "fileName": "[ModuleName].view.tsx",
+          "template": [
+            "import React, { FC } from 'react';",
+            "import { useSelector } from 'react-redux';",
+            "",
+            "import { ApplicationState } from 'store';",
+            "import ViewBase from 'components/ViewBase';",
+            "",
+            "const [ModuleName]: FC = () => {",
+            "  const appState = useSelector((state: ApplicationState) => state);",
+            "  console.log(appState);",
+            "",
+            "  return <ViewBase id=\"[module-name]-view\">[ModuleName]</ViewBase>;",
+            "};",
+            "",
+            "export default [ModuleName];",
+            ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": ["export { default } from './[ModuleName].view';", ""]
+        }
+      ]
+    }
+  ]
+}
