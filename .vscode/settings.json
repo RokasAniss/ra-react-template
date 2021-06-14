@@ -6,7 +6,6 @@
     ".browserslistrc": true,
     ".editorConfig": true,
     ".eslintignore": true,
-    ".eslintrc.js": true,
     ".huskyrc.json": true,
     ".prettierignore": true,
     ".prettierrc": true,
