@@ -3,7 +3,6 @@ import * as webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const mode = process.argv[process.argv.indexOf('--mode') + 1];
 const IOconfig = {
@@ -26,6 +25,7 @@ const config: webpack.Configuration = {
   output: {
     path: IOconfig.output.dir,
     filename: IOconfig.output.js,
+    clean: true,
   },
   resolve: {
     alias: {
@@ -94,7 +94,6 @@ const config: webpack.Configuration = {
       filename: IOconfig.output.css,
     }),
     new StylelintPlugin(),
-    new CleanWebpackPlugin(),
   ],
 };
 
