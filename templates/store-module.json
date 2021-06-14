@@ -17,7 +17,7 @@
         {
           "fileName": "[moduleName].actionTypes.ts",
           "template": [
-            "import { Action, PayloadAction } from '@/types';",
+            "import { Action, PayloadAction } from '@/types/app';",
             "",
             "export type ActionOne = Action<[ModuleName]ActionTypes.actionOne>;",
             "",
