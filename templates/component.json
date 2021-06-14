@@ -16,7 +16,7 @@
             "",
             "const [ModuleName]: FC<[ModuleName]Props> = ({",
             "  label = '[ModuleName]',",
-            "}: [ModuleName]Props) => {",
+            "}) => {",
             "  const className = '[module-name]';",
             "",
             "  return <div className={cx(className)}>{label}</div>;",

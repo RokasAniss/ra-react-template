@@ -1,0 +1,93 @@
+{
+  "name": "Store module",
+  "description": "Generate a redux store module",
+  "add": [
+    {
+      "dirPath": "src/store/modules/[moduleName]",
+      "files": [
+        {
+          "fileName": "[moduleName].state.ts",
+          "template": [
+            "export interface [ModuleName]State {",
+            "  id: number;",
+            "}",
+            ""
+          ]
+        },
+        {
+          "fileName": "[moduleName].actionTypes.ts",
+          "template": [
+            "import { Action, PayloadAction } from 'types/store';",
+            "",
+            "export type ActionOne = Action<[ModuleName]ActionTypes.actionOne>;",
+            "",
+            "export type ActionTwo = PayloadAction<[ModuleName]ActionTypes.actionTwo, number>;",
+            "",
+            "export enum [ModuleName]ActionTypes {",
+            "  actionOne = '[moduleName]/ACTION_ONE',",
+            "  actionTwo = '[moduleName]/ACTION_TWO',",
+            "}",
+            "export type [ModuleName]Actions = ActionOne | ActionTwo;",
+            ""
+          ]
+        },
+        {
+          "fileName": "[moduleName].actions.ts",
+          "template": [
+            "import { [ModuleName]ActionTypes, ActionOne, ActionTwo } from './[moduleName].actionTypes';",
+            "",
+            "export const actionOne = (): ActionOne => ({",
+            "  type: [ModuleName]ActionTypes.actionOne,",
+            "});",
+            "",
+            "export const actionTwo = (payload: ActionTwo['payload']): ActionTwo => ({",
+            "  type: [ModuleName]ActionTypes.actionTwo,",
+            "  payload,",
+            "});",
+            ""
+          ]
+        },
+        {
+          "fileName": "[moduleName].reducer.ts",
+          "template": [
+            "import { [ModuleName]Actions, [ModuleName]ActionTypes } from './[moduleName].actionTypes';",
+            "import { [ModuleName]State } from './[moduleName].state';",
+            "",
+            "const initialState: [ModuleName]State = {",
+            "  id: 0,",
+            "};",
+            "",
+            "export const [moduleName]Reducer = (state = initialState, action: [ModuleName]Actions): [ModuleName]State => {",
+            "  switch (action.type) {",
+            "    case [ModuleName]ActionTypes.actionTwo:",
+            "      return {",
+            "        ...state,",
+            "        id: action.payload,",
+            "      };",
+            "    default:",
+            "      return state;",
+            "  }",
+            "};"
+          ]
+        }
+      ]
+    }
+  ],
+  "modify": [
+    {
+      "filePath": "src/store/rootReducer.ts",
+      "lines": [
+        {
+          "hook": "// IMPORT_REDUCER",
+          "appendLines": [
+            "import { [moduleName]Reducer } from './modules/[moduleName]/[moduleName].reducer';"
+          ]
+        },
+        {
+          "hook": "// DECLARE_REDUCER",
+          "appendLines": ["[moduleName]: [moduleName]Reducer,"]
+        }
+      ]
+    }
+  ]
+}
