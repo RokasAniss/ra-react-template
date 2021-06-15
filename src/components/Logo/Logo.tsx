@@ -9,7 +9,7 @@ const Logo: FC = () => {
 
   return (
     <div className={className}>
-      <img src={raLogo} alt="logo" />
+      <img src={raLogo} className={`${className}__icon`} alt="logo" />
       <span className={`${className}__title`}>ra react template</span>
     </div>
   );

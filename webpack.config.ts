@@ -9,8 +9,8 @@ const IOconfig = {
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
     dir: path.resolve(__dirname, 'dist'),
-    js: 'app.bundle.[chunkhash].js',
-    css: 'styles.min.[chunkhash].css',
+    js: mode === 'production' ? 'app.bundle.[chunkhash].js' : 'app.bundle.js',
+    css: mode === 'production' ? 'styles.min.[chunkhash].css' : 'styles.min.css',
     assets: 'assets/',
   },
   htmlTemplate: path.resolve(__dirname, 'src/index.html'),
