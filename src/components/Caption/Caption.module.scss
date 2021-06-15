@@ -2,7 +2,9 @@
   align-items: center;
   background-color: darken(color('light'), 50%);
   border-radius: 10px;
+  color: color('light');
   display: flex;
+  font-family: font-family('body');
   padding: spacing('s') spacing('m');
 
   &__paragraph {
