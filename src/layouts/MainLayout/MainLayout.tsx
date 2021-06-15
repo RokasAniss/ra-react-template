@@ -16,7 +16,9 @@ const MainLayout: FC<MainLayoutProps> = ({ children }: MainLayoutProps) => {
           <Logo />
         </div>
       </div>
-      <div className={cx(`${className}__body`)}>{children}</div>
+      <div className={cx(`${className}__body`)}>
+        <div className={cx(`${className}__body-container`)}>{children}</div>
+      </div>
     </div>
   );
 };

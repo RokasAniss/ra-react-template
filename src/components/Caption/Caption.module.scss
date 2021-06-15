@@ -1,0 +1,11 @@
+.caption {
+  align-items: center;
+  background-color: darken(color('light'), 50%);
+  border-radius: 10px;
+  display: flex;
+  padding: spacing('s') spacing('m');
+
+  &__paragraph {
+    text-align: left;
+  }
+}
