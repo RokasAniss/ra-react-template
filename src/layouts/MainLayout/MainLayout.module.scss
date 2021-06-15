@@ -1,12 +1,18 @@
 .main-layout {
   align-items: center;
   background-color: color('dark');
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
-  padding-top: spacing('l');
   width: 100vw;
 
-  &__container {
+  @include if-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  &__navigation-container {
     display: grid;
     padding: spacing('l');
   }
@@ -17,9 +23,11 @@
 
   &__body {
     align-items: center;
+    background-color: lighten(color('dark'), 10%);
     color: color('light');
     display: flex;
     flex-direction: column;
+    height: 100%;
     width: 100%;
   }
 }

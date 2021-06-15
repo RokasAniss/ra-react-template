@@ -11,12 +11,12 @@ const MainLayout: FC<MainLayoutProps> = ({ children }: MainLayoutProps) => {
 
   return (
     <div className={cx(className)}>
-      <div className={cx(`${className}__container`)}>
+      <div className={cx(`${className}__navigation-container`)}>
         <div className={cx(`${className}__logo`)}>
           <Logo />
         </div>
-        <div className={cx(`${className}__body`)}>{children}</div>
       </div>
+      <div className={cx(`${className}__body`)}>{children}</div>
     </div>
   );
 };

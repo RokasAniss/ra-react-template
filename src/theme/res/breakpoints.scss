@@ -1,0 +1,28 @@
+$breakpoint-tablet: 48rem; // 768px
+$breakpoint-tablet-landscape: 64rem; // 1024px
+$breakpoint-laptop: 80rem; // 1280px
+$breakpoint-desktop: 90rem; //1440px
+
+@mixin if-tablet {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin if-tablet-landscape {
+  @media screen and (min-width: $breakpoint-tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin if-laptop {
+  @media screen and (min-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin if-desktop {
+  @media screen and (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
