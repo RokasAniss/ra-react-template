@@ -38,7 +38,7 @@
             "",
             "describe('[ModuleName]', () => {",
             "  const defaultProps: [ModuleName]Props = {",
-            "    label: 'test',",
+            "    children: <span>test</span>,",
             "  };",
             "",
             "  const createWrapper = (props: Partial<[ModuleName]Props> = {}):",
