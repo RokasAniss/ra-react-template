@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import raLogo from '@/assets/ra-logo.svg';
+
 import './Logo.scss';
 
 const Logo: FC = () => {
@@ -7,7 +9,7 @@ const Logo: FC = () => {
 
   return (
     <div className={className}>
-      <h1 className={`${className}__title`}>Logo</h1>
+      <img src={raLogo} alt="logo" />
     </div>
   );
 };
