@@ -1,15 +1,18 @@
 .main-layout {
+  align-items: center;
   background-color: color('dark');
   display: flex;
   min-height: 100vh;
   padding-top: spacing('l');
   width: 100vw;
 
+  &__container {
+    display: grid;
+    padding: spacing('l');
+  }
+
   &__logo {
-    left: 50%;
-    position: fixed;
-    top: spacing('s');
-    transform: translateX(-50%);
+    display: block;
   }
 
   &__body {

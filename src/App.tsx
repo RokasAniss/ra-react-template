@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { paths } from '@/routes';
 import MainLayout from '@/layouts/MainLayout';
@@ -10,10 +10,6 @@ const App: FC = () => {
   return (
     <Router>
       <MainLayout>
-        <div>
-          <Link to={paths.home}>Home</Link>
-          <Link to={paths.about}>About</Link>
-        </div>
         <Switch>
           <Route path={paths.home} exact>
             <Home />

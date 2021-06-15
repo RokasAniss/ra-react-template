@@ -1,7 +1,12 @@
 .logo {
+  align-items: center;
   color: color('light');
   display: flex;
   font-family: font-family('body');
   font-size: 0.5rem;
-  text-transform: uppercase;
+
+  &__title {
+    font-size: 1rem;
+    margin-left: spacing('s');
+  }
 }
