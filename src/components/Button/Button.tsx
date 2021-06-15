@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
-import style from './Button.module.scss';
-const cx = classNames.bind(style);
+import styles from './Button.module.scss';
+const cx = classNames.bind(styles);
 
 const Button: FC<ButtonProps> = ({
   label,
