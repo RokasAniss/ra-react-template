@@ -7,7 +7,11 @@ const cx = classNames.bind(styles);
 const Caption: FC<CaptionProps> = ({ label = 'Caption' }) => {
   const className = 'caption';
 
-  return <div className={cx(className)}><p className={cx(`${className}__paragraph`)}>{label}</p></div>;
+  return (
+    <div className={cx(className)}>
+      <p className={cx(`${className}__paragraph`)}>{label}</p>
+    </div>
+  );
 };
 
 export interface CaptionProps {
